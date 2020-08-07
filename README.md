@@ -1,4 +1,4 @@
-# k8s-sharedInformers
+# k8s-sharedInformers Using SharedInformerFactory
 A K8s informer listens to a new Pod Creation ,Deletion and Updation.
 These is a long running app which will keep on listening to the Pods events 
 and will return the Pod name and namespace where the resocue is created ,deleted or updated.
