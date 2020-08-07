@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: podsevents
+  annotations:
+    iam.amazonaws.com/permitted: .*
+    iks.image-policy.k8s.io/allowed-registries: gcr.io,k8s.gcr.io,quay.io,docker.io,docker.intuit.com
+  labels:
+    name: podsevents
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webserver2
+  namespace: podsevents
+spec:
+  containers:
+    - name: webserver2
+      image: nginx:1.19.1
+      ports:
+        - containerPort: 80
